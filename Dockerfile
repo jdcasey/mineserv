@@ -6,12 +6,12 @@ RUN dnf -y update && \
 	mkdir -p /usr/local/lib/mineserv/plugins.optional && \
 	mkdir -p /usr/local/bin
 
-ADD https://papermc.io/api/v2/projects/paper/versions/1.17.1/builds/241/downloads/paper-1.17.1-241.jar /usr/local/lib/mineserv/paper.jar
 
 #ADD plugins /usr/local/lib/mineserv/plugins
 #ADD plugins.optional /usr/local/lib/mineserv/plugins.optional
-
 #ADD eula.txt /usr/local/lib/mineserv/eula.txt
+
+ADD https://papermc.io/api/v2/projects/paper/versions/1.17.1/builds/241/downloads/paper-1.17.1-241.jar /usr/local/lib/mineserv/paper.jar
 ADD start.sh /usr/local/bin/start.sh
 
 RUN chmod +x /usr/local/bin/start.sh

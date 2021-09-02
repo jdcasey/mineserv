@@ -1,11 +1,13 @@
 #!/bin/bash
 
-MS=/usr/local/lib/mineserv
+MS=/usr/local/etc/mineserv
 
-cd /world
-cp -rf /plugins /world
+cd /world || exit -1
 
-cp -rf $MS/eula.txt /world
+if [ -d /plugins ]; then
+	cp -rf /plugins /world
+fi
 
+cp -rf $MS/* /world
 
-exec java -jar /usr/local/lib/mineserv/paper.jar "$@"
+exec java $JVM_OPTS -jar /usr/local/lib/mineserv/paper.jar "$PAPER_ARGS"
