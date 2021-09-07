@@ -4,7 +4,6 @@ metadata:
   labels:
     app: mineserv
   name: world-1
-  namespace: default
 spec:
   accessModes:
     - ReadWriteOnce

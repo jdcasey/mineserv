@@ -4,7 +4,6 @@ metadata:
   labels:
     app: mineserv
   name: mineserv
-  namespace: default
 spec:
   replicas: 1
   selector:
@@ -18,7 +17,9 @@ spec:
       containers:
       - image: quay.io/jdcasey/mineserv:latest
         imagePullPolicy: Always
+
         name: mineserv-1
+
         volumeMounts:
         - mountPath: /world
           name: mineserv-world-1

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MS=/usr/local/etc/mineserv
+MS=/usr/local/mineserv/etc
 
 cd /world || exit -1
 
