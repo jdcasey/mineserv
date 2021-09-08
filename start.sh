@@ -5,7 +5,8 @@ MS=/usr/local/mineserv
 cd /world || exit -1
 
 if [ -d $MS/plugins ]; then
-	cp -rf /plugins /world
+	mkdir /world/plugins 2>&1 > /dev/null
+	cp -rf /plugins/* /world/plugins
 fi
 
 if [ -d $MS/etc ]; then
