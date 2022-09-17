@@ -11,7 +11,7 @@ RUN dnf -y update && \
 #ADD plugins.optional /usr/local/lib/mineserv/plugins.optional
 #ADD eula.txt /usr/local/lib/mineserv/eula.txt
 
-ADD https://api.papermc.io/v2/projects/paper/versions/1.19/builds/56/downloads/paper-1.19-56.jar /usr/local/lib/mineserv/paper.jar
+ADD https://api.papermc.io/v2/projects/paper/versions/1.19.2/builds/142/downloads/paper-1.19.2-142.jar /usr/local/lib/mineserv/paper.jar
 ADD start.sh /usr/local/bin/start.sh
 
 RUN chmod +x /usr/local/bin/start.sh
