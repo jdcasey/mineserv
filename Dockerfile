@@ -3,14 +3,10 @@ FROM fedora:latest
 RUN dnf -y update && \
 	dnf -y install java-latest-openjdk-headless && \
 	mkdir -p /usr/local/lib/mineserv/plugins && \
-	mkdir -p /usr/local/lib/mineserv/plugins.optional && \
 	mkdir -p /usr/local/bin
 
 
-#ADD plugins /usr/local/lib/mineserv/plugins
-#ADD plugins.optional /usr/local/lib/mineserv/plugins.optional
-#ADD eula.txt /usr/local/lib/mineserv/eula.txt
-
+ADD plugins /usr/local/lib/mineserv/plugins
 ADD https://api.papermc.io/v2/projects/paper/versions/1.19.2/builds/142/downloads/paper-1.19.2-142.jar /usr/local/lib/mineserv/paper.jar
 ADD start.sh /usr/local/bin/start.sh
 
@@ -24,3 +20,4 @@ EXPOSE 25565/udp
 #USER 1000
 
 ENTRYPOINT /bin/bash -l /usr/local/bin/start.sh
+#ENTRYPOINT /bin/bash

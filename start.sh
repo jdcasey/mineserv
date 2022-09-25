@@ -1,12 +1,13 @@
 #!/bin/bash
 
-MS=/usr/local/mineserv
-WORLD=$MS/world
+MS=/usr/local/lib/mineserv
+WORLD=/usr/local/mineserv/world
 
 cd $WORLD || exit -1
 
 if [ -d $MS/plugins ]; then
-	mkdir $WORLD/plugins 2>&1 > /dev/null
+	rm -f $WORLD/plugins/*.jar
+	mkdir $WORLD/plugins
 	cp -rf $MS/plugins/* $WORLD/plugins
 fi
 
