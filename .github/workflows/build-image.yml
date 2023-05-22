@@ -1,8 +1,10 @@
 name: Build Image
 
 on:
+  workflow_dispatch:
+    branches: [ main, fabric ]
   push:
-    branches: [ main ]
+    branches: [ main, fabric ]
 
 jobs:
 
@@ -18,7 +20,7 @@ jobs:
       uses: redhat-actions/buildah-build@v2
       with:
         image: mineserv
-        tags: latest ${{ github.sha }}
+        tags: latest-fabric ${{ github.sha }}
         containerfiles: |
           ./Dockerfile
 
