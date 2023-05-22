@@ -1,8 +1,10 @@
 name: Build Image
 
 on:
+  workflow_dispatch:
+    branches: [ main, fabric ]
   push:
-    branches: [ main ]
+    branches: [ main, fabric ]
 
 jobs:
 
