@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec podman build "$@" --tag=mineserv .
+exec podman build "$@" --tag=mineserv:local .

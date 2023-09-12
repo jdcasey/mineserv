@@ -6,8 +6,8 @@ RUN	mkdir -p /usr/local/lib/mineserv/mods && \
 	mkdir -p /usr/local/lib/mineserv/etc && \
 	mkdir -p /usr/local/bin
 
-ARG minecraft_ver=1.19.4
-ARG fabric_ver=0.14.19
+ARG minecraft_ver=1.20.1
+ARG fabric_ver=0.14.22
 ARG installer_ver=0.11.2
 
 ADD eula.txt /usr/local/lib/mineserv/etc
@@ -18,20 +18,23 @@ RUN chmod +x /usr/local/bin/start.sh
 
 EXPOSE 25565/tcp
 EXPOSE 19132/udp
-EXPOSE 19133/udp
 EXPOSE 25565/udp
 
 #USER 1000
 
 ENV SERVER_ARGS=nogui
-ENV JVM_OPTS="-Xmx8G -Xms8G"
+ENV JVM_OPTS="-Xmx4G -Xms4G"
 
 ADD mods /usr/local/lib/mineserv/mods
-ADD https://github.com/CaffeineMC/sodium-fabric/releases/download/mc1.19.4-0.4.11/sodium-fabric-mc1.19.4-0.4.11+build.26.jar /usr/local/lib/mineserv/mods
-ADD https://github.com/comp500/Indium/releases/download/1.0.15%2Bmc1.19.4/indium-1.0.15+mc1.19.4.jar /usr/local/lib/mineserv/mods
-ADD https://github.com/CaffeineMC/lithium-fabric/releases/download/mc1.19.4-0.11.1/lithium-fabric-mc1.19.4-0.11.1.jar /usr/local/lib/mineserv/mods
-#ADD https://github.com/CaffeineMC/phosphor-fabric/releases/download/mc1.19.x-0.8.1/phosphor-fabric-mc1.19.x-0.8.1.jar /usr/local/lib/mineserv/mods
-ADD https://cdn.modrinth.com/data/H8CaAYZC/versions/1.1.1%2B1.19/starlight-1.1.1%2Bfabric.ae22326.jar /usr/local/lib/mineserv/mods
+ADD https://github.com/CaffeineMC/sodium-fabric/releases/download/mc1.20.1-0.5.2/sodium-fabric-mc1.20.1-0.5.2.jar /usr/local/lib/mineserv/mods
+ADD https://github.com/comp500/Indium/releases/download/1.0.25%2Bmc1.20.1/indium-1.0.25+mc1.20.1.jar /usr/local/lib/mineserv/mods
+ADD https://github.com/CaffeineMC/lithium-fabric/releases/download/mc1.20.1-0.11.2/lithium-fabric-mc1.20.1-0.11.2.jar /usr/local/lib/mineserv/mods
+ADD https://github.com/IrisShaders/Iris/releases/download/1.6.8%2B1.20.1/iris-mc1.20.1-1.6.8.jar /usr/local/lib/mineserv/mods
+
+# ADD https://github.com/CaffeineMC/phosphor-fabric/releases/download/mc1.19.x-0.8.1/phosphor-fabric-mc1.19.x-0.8.1.jar /usr/local/lib/mineserv/mods
+
+ADD https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/spigot /usr/local/lib/mineserv/mods
+ADD https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/spigot /usr/local/lib/mineserv/mods
 
 ENTRYPOINT /usr/local/bin/start.sh
 #ENTRYPOINT /bin/bash
