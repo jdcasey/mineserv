@@ -26,12 +26,13 @@ ENV SERVER_ARGS=nogui
 ENV JVM_OPTS="-Xmx4G -Xms4G"
 
 ADD mods /usr/local/lib/mineserv/mods
+ADD shared-mods /usr/local/lib/mineserv/mods
+
 ADD https://github.com/CaffeineMC/sodium-fabric/releases/download/mc1.20.1-0.5.2/sodium-fabric-mc1.20.1-0.5.2.jar /usr/local/lib/mineserv/mods
 ADD https://github.com/comp500/Indium/releases/download/1.0.25%2Bmc1.20.1/indium-1.0.25+mc1.20.1.jar /usr/local/lib/mineserv/mods
 ADD https://github.com/CaffeineMC/lithium-fabric/releases/download/mc1.20.1-0.11.2/lithium-fabric-mc1.20.1-0.11.2.jar /usr/local/lib/mineserv/mods
-ADD https://github.com/IrisShaders/Iris/releases/download/1.6.8%2B1.20.1/iris-mc1.20.1-1.6.8.jar /usr/local/lib/mineserv/mods
 
-# ADD https://github.com/CaffeineMC/phosphor-fabric/releases/download/mc1.19.x-0.8.1/phosphor-fabric-mc1.19.x-0.8.1.jar /usr/local/lib/mineserv/mods
+ADD https://github.com/IrisShaders/Iris/releases/download/1.6.8%2B1.20.1/iris-mc1.20.1-1.6.8.jar /usr/local/lib/mineserv/mods
 
 ADD https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/spigot /usr/local/lib/mineserv/mods
 ADD https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/spigot /usr/local/lib/mineserv/mods
