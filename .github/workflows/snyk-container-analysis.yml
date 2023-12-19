@@ -22,12 +22,6 @@ on:
         default: ${{ github.sha }}
         type: string
   workflow_call:
-    inputs:
-      sha:
-        description: "Container Image SHA (Git commit)"
-        required: true
-        default: ${{ github.sha }}
-        type: string
   schedule:
     - cron: '15 0 * * 6'
 
