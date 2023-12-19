@@ -49,4 +49,6 @@ jobs:
         password: ${{ secrets.QUAY_BOT_PASSWORD }}
 
   call-snyk:
-    uses: ./.github/snyk-container-analysis.yml
+    uses: ./.github/workflows/snyk-container-analysis.yml
+    with:
+      sha: ${{ github.sha }}
