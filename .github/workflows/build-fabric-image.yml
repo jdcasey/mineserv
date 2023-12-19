@@ -47,3 +47,6 @@ jobs:
         registry: quay.io/jdcasey
         username: ${{ secrets.QUAY_BOT_USER }}
         password: ${{ secrets.QUAY_BOT_PASSWORD }}
+
+  call-snyk:
+    uses: ./.github/snyk-container-analysis.yml
