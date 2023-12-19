@@ -5,7 +5,8 @@ from typing import Any, Optional
 
 import requests
 
-OUTDIR = "plugins"
+WORKDIR = os.getenv("GITHUB_WORKSPACE")
+OUTDIR = f"{WORKDIR}/plugins"
 
 DIRECT_DOWNLOAD = {
     "Geyser-Spigot.jar": "https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/spigot"
@@ -14,21 +15,25 @@ DIRECT_DOWNLOAD = {
 PLUGINS = {
     "Multiverse-Core": "Multiverse/Multiverse-Core",
     "Multiverse-Portals": "Multiverse/Multiverse-Portals",
-    "Multiverse-SignPortals": "Multiverse/Multiverse-SignPortals"
+    "Multiverse-SignPortals": "Multiverse/Multiverse-SignPortals",
 }
 
 HEADERS = {
     "Accept": "application/vnd.github+json",
-    "X-GitHub-Api-Version": "2022-11-28"
+    "X-GitHub-Api-Version": "2022-11-28",
 }
 
 TIMEOUT = 60
 
 
 def get_release(repo_key: str) -> dict[str, Any]:
-    """ Find the latest release for a given repo and return its id and name"""
+    """Find the latest release for a given repo and return its id and name"""
 
-    resp = requests.get(f"https://api.github.com/repos/{repo_key}/releases/latest", headers=HEADERS, timeout=TIMEOUT)
+    resp = requests.get(
+        f"https://api.github.com/repos/{repo_key}/releases/latest",
+        headers=HEADERS,
+        timeout=TIMEOUT,
+    )
     resp.raise_for_status()
     data = resp.json()
 
@@ -36,9 +41,13 @@ def get_release(repo_key: str) -> dict[str, Any]:
 
 
 def get_jar_url(repo_key: str, release_id: int) -> Optional[dict[str, str]]:
-    """ Find a JAR asset for the given repo and release ID, and return its URL"""
+    """Find a JAR asset for the given repo and release ID, and return its URL"""
 
-    resp = requests.get(f"https://api.github.com/repos/{repo_key}/releases/{release_id}/assets", headers=HEADERS, timeout=TIMEOUT)
+    resp = requests.get(
+        f"https://api.github.com/repos/{repo_key}/releases/{release_id}/assets",
+        headers=HEADERS,
+        timeout=TIMEOUT,
+    )
     resp.raise_for_status()
     data = resp.json()
 
@@ -52,14 +61,16 @@ def get_jar_url(repo_key: str, release_id: int) -> Optional[dict[str, str]]:
 
 
 def download(name: str, url: str) -> None:
+    """Download a plugin from the given URL into the output directory under the given name"""
+
     plugin_file = os.path.join(OUTDIR, name)
 
     resp = requests.get(url, timeout=5 * TIMEOUT)
     resp.raise_for_status()
-    with open(plugin_file, 'wb') as fhandle:
+    with open(plugin_file, "wb") as fhandle:
         fhandle.write(resp.content)
 
-    print(f"Downloaded {name}: {url}")
+    print(f"Downloaded {plugin_file}: {url}")
 
 
 for k, v in PLUGINS.items():
@@ -69,4 +80,3 @@ for k, v in PLUGINS.items():
 
 for pname, purl in DIRECT_DOWNLOAD.items():
     download(pname, purl)
-

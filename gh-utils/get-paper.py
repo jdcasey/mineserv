@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 
+import os
+
 import requests
 
+WORKDIR = os.getenv("GITHUB_WORKSPACE")
 PAPER_VERSIONS = "https://api.papermc.io/v2/projects/paper/"
 PAPER_BUILDS_BASE = "https://api.papermc.io/v2/projects/paper/versions/"
-PAPER_OUTFILE = "paper.jar"
+PAPER_OUTFILE = f"{WORKDIR}/paper.jar"
 
 TIMEOUT = 60
 
@@ -51,9 +54,9 @@ version_data = resp.json()
 build = str(sorted(version_data["builds"])[-1])
 
 url = f"https://api.papermc.io/v2/projects/paper/versions/{selected_version}/builds/{build}/downloads/paper-{selected_version}-{build}.jar"
-resp = requests.get(url, timeout=5*TIMEOUT)
+resp = requests.get(url, timeout=5 * TIMEOUT)
 resp.raise_for_status()
-with open(PAPER_OUTFILE, 'wb') as fhandle:
+with open(PAPER_OUTFILE, "wb") as fhandle:
     fhandle.write(resp.content)
 
 print(f"Downloaded Paper: {url}")
