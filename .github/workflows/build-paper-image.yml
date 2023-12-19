@@ -1,7 +1,7 @@
-name: Build Image
+name: Build Paper Image
 
 on:
-  workflow_run:
+  workflow_dispatch:
     branches: [ main ]
   schedule:
     - cron: '0 0 1,15 * *'

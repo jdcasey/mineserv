@@ -1,7 +1,7 @@
-name: Build Image
+name: Build Fabric Image
 
 on:
-  workflow_run:
+  workflow_dispatch:
     branches: [ fabric ]
   schedule:
     - cron: '0 0 1,15 * *'
