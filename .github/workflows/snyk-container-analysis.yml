@@ -19,7 +19,6 @@ on:
       sha:
         description: "Container Image SHA (Git commit)"
         required: true
-        default: ${{ github.sha }}
         type: string
   workflow_call:
   schedule:
