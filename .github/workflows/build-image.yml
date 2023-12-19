@@ -9,26 +9,21 @@ on:
 jobs:
 
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-
-    - name: Download Paper
-      uses: actions/setup-python@v5
-      id: get-paper
+    - uses: actions/setup-python@v5
       with:
         python-version: '3.12'
         cache: 'pip' # caching pip dependencies
+
+    - name: Download Paper
+      id: get-paper
       run: "${GITHUB_WORKSPACE}/gh-utils/get-paper.py"
 
     - name: Download Plugins
-      uses: actions/setup-python@v5
       id: get-plugins
-      with:
-        python-version: '3.12'
-        cache: 'pip' # caching pip dependencies
       run: "${GITHUB_WORKSPACE}/gh-utils/get-plugins.py"
 
     - name: Buildah Build
