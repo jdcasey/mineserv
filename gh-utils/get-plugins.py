@@ -59,7 +59,7 @@ def download(name: str, url: str) -> None:
     with open(plugin_file, 'wb') as fhandle:
         fhandle.write(resp.content)
 
-    print(plugin_file)
+    print(f"Downloaded {name}: {url}")
 
 
 for k, v in PLUGINS.items():

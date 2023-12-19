@@ -56,3 +56,4 @@ resp.raise_for_status()
 with open(PAPER_OUTFILE, 'wb') as fhandle:
     fhandle.write(resp.content)
 
+print(f"Downloaded Paper: {url}")

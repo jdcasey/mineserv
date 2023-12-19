@@ -17,11 +17,13 @@ jobs:
       with:
         python-version: '3.12'
 
-    - run: |
+    - name: Download Paper
+      run: |
         pip install requests
         python ${GITHUB_WORKSPACE}/gh-utils/get-paper.py
 
-    - run: |
+    - name: Download Plugins
+      run: |
         pip install requests
         python ${GITHUB_WORKSPACE}/gh-utils/get-plugins.py
 
