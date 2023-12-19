@@ -50,5 +50,6 @@ jobs:
 
   call-snyk:
     uses: './.github/workflows/snyk-container-analysis.yml'
+    needs: build
 
 
