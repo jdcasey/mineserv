@@ -14,6 +14,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+        cache: 'pip' # caching pip dependencies
+
+    - run: pip install requests
+
+    - name: Download Paper
+      id: get-paper
+      run: "${GITHUB_WORKSPACE}/gh-utils/get-paper.py"
+
+    - name: Download Plugins
+      id: get-plugins
+      run: "${GITHUB_WORKSPACE}/gh-utils/get-plugins.py"
 
     - name: Buildah Build
       id: build-image
