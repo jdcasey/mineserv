@@ -19,8 +19,6 @@ jobs:
         python-version: '3.12'
         cache: 'pip' # caching pip dependencies
 
-    - run: pip install requests
-
     - name: Download Paper
       id: get-paper
       run: "${GITHUB_WORKSPACE}/gh-utils/get-paper.py"
