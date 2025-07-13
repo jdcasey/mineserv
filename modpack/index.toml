@@ -1,0 +1,86 @@
+hash-format = "sha256"
+
+[[files]]
+file = "complementary-unbound.pw.toml"
+hash = "0ecc8df3b8cc35aaae4ea7757417a8050e99657e683e7b7e05410aeedfc28d0b"
+metafile = true
+
+[[files]]
+file = "mods/architectury-api.pw.toml"
+hash = "39792a11da59cebc770f3918dd0ad53637bcbd206dc19bfa6709392bfd2d1830"
+metafile = true
+
+[[files]]
+file = "mods/athena.pw.toml"
+hash = "fff0b46fc8b9e9c44f4b6af6ce8c90d12e79b955506f6884986647011d92abc6"
+metafile = true
+
+[[files]]
+file = "mods/automodpack.pw.toml"
+hash = "de94716f1942e0b11f7c3dd26ec5773c97b3f284e4b2e33034c135de60f31bc5"
+metafile = true
+
+[[files]]
+file = "mods/chipped.pw.toml"
+hash = "a26fa538ff65bfa90d5abc69b712f6e8f04e18759315ea1ae7402e271f1c4797"
+metafile = true
+
+[[files]]
+file = "mods/cobblemon.pw.toml"
+hash = "3593a55533ec4e8783a733d33ca31831310cb779b829e4705056cf0241e6a16b"
+metafile = true
+
+[[files]]
+file = "mods/fabric-api.pw.toml"
+hash = "c4c639fd22fcca51828999d296664e7a73b4488c7441d97cda51dfe8ccec218b"
+metafile = true
+
+[[files]]
+file = "mods/forge-config-api-port-fabric.pw.toml"
+hash = "3591fd1d03bd9e21976c718e5260b1225d6fc354415ddecba23f0b8d63f2f938"
+metafile = true
+
+[[files]]
+file = "mods/ftb-essentials.pw.toml"
+hash = "de92908fea39a883efd8800a1d0d9652556177dde2d19e78ef241f46f3885a90"
+metafile = true
+
+[[files]]
+file = "mods/ftb-library-fabric.pw.toml"
+hash = "7fcbe2ad93612a097b23c4629d21365dd01362430b5f965a33934fb766ab1ed3"
+metafile = true
+
+[[files]]
+file = "mods/irisshaders.pw.toml"
+hash = "b31e45972ba08291e168f9d93ed14d679a8799983b7bce7ca38faa795a85bf3a"
+metafile = true
+
+[[files]]
+file = "mods/jei.pw.toml"
+hash = "842764d2f005066f9862e5beea3ca01182c78c7dd8133a81e8f102940b0e2215"
+metafile = true
+
+[[files]]
+file = "mods/open-parties-and-claims.pw.toml"
+hash = "fe9b0c6b3f6c8f17989aa34724eb970e2df6129e38bb81788e01e0c9bbe22d2c"
+metafile = true
+
+[[files]]
+file = "mods/resourceful-lib.pw.toml"
+hash = "8deb4040131569c97902b40e0d81ef80330c6bb477c2ebcf5a5d987e1348eb96"
+metafile = true
+
+[[files]]
+file = "mods/sodium.pw.toml"
+hash = "f73a48751e13380b87296e5b9627c9f6669efda386bd646fd5c499b344570f46"
+metafile = true
+
+[[files]]
+file = "mods/xaeros-minimap.pw.toml"
+hash = "3f2679ef007b71cd7c39dae2fb5a1ecd1edfaa121db387d0b29676b66123445a"
+metafile = true
+
+[[files]]
+file = "mods/xaeros-world-map.pw.toml"
+hash = "a868f5c10e3e174576143d0f985d05dda37f554ebef25bd004b86238f86f26b7"
+metafile = true

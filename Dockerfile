@@ -2,9 +2,9 @@ FROM fedora-minimal:latest
 #FROM docker.io/openjdk:21-jdk-slim
 
 RUN microdnf -y update && \
-	microdnf -y install java-latest-openjdk-headless
+	microdnf -y install java-21-openjdk-headless
 
-RUN	mkdir -p /usr/local/lib/mineserv/mods && \
+RUN	mkdir -p /usr/local/lib/mineserv/modpack && \
 	mkdir -p /usr/local/lib/mineserv/init-etc && \
 	mkdir -p /usr/local/bin && \
 	mkdir /world && \
@@ -16,6 +16,8 @@ ARG installer_ver=1.1.0
 
 #ADD fabric.jar /usr/local/lib/mineserv/fabric.jar
 ADD https://meta.fabricmc.net/v2/versions/loader/$minecraft_ver/$fabric_ver/$installer_ver/server/jar /usr/local/lib/mineserv/fabric.jar
+
+ADD https://github.com/packwiz/packwiz-installer-bootstrap/releases/download/v0.0.3/packwiz-installer-bootstrap.jar /usr/local/lib/mineserv/packwiz-installer-bootstrap.jar
 
 ADD start.sh /usr/local/bin/start.sh
 
@@ -34,7 +36,9 @@ VOLUME /config
 ENV SERVER_ARGS=nogui
 ENV JVM_OPTS="-Xmx8G -Xms8G -XX:+UseShenandoahGC --enable-native-access=ALL-UNNAMED"
 
-ADD core-mods /usr/local/lib/mineserv/mods
+ADD modpack /usr/local/lib/mineserv/modpack
+WORKDIR /usr/local/lib/mineserv
+RUN java -jar ./packwiz-installer-bootstrap.jar --no-gui file:///usr/local/lib/mineserv/modpack/pack.toml
 
 ADD initial-server-config /usr/local/lib/mineserv/init-etc
 # ADD server-config /usr/local/lib/mineserv/etc

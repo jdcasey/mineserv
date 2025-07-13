@@ -1,0 +1,13 @@
+name = "Cobblemon"
+filename = "Cobblemon-fabric-1.6.1+1.21.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "44657312c2d9d43f5db24ec779b5044b7453a924"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6125079
+project-id = 687131

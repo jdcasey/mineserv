@@ -1,0 +1,13 @@
+name = "Mineserv Season 1"
+author = "John Casey"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "39e0eb401c7118395febbc7b7aad9b1993cf698533ca4d9ed8b1039d7c508a70"
+
+[versions]
+fabric = "0.16.14"
+minecraft = "1.21.1"
