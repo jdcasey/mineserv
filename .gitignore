@@ -1,2 +1,7 @@
+fabric*.jar
+paper*.jar
+server.jar
 plugins*
 .idea
+*.code-workspace
+*.bak
