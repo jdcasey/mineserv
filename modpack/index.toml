@@ -26,8 +26,13 @@ hash = "a26fa538ff65bfa90d5abc69b712f6e8f04e18759315ea1ae7402e271f1c4797"
 metafile = true
 
 [[files]]
+file = "mods/cobblemon-legendary-structures.pw.toml"
+hash = "516f919c449af1af67374a500c385e4cb9ec26450edd1de4b85dd97895958bf5"
+metafile = true
+
+[[files]]
 file = "mods/cobblemon.pw.toml"
-hash = "3593a55533ec4e8783a733d33ca31831310cb779b829e4705056cf0241e6a16b"
+hash = "18f45db393d99493c00150c2d4a74d927fc1eccb575629ef1a1fa72ef950b7ff"
 metafile = true
 
 [[files]]
@@ -61,6 +66,16 @@ hash = "842764d2f005066f9862e5beea3ca01182c78c7dd8133a81e8f102940b0e2215"
 metafile = true
 
 [[files]]
+file = "mods/loot-table-modifier.pw.toml"
+hash = "6b41d3cceff12824944b7b2171eb5cf714b07b1ba3dc11b73418c6598fda0c51"
+metafile = true
+
+[[files]]
+file = "mods/modmenu.pw.toml"
+hash = "c2fe9a1900ceb3a6014ccb83344aa4ab5ddf65c8bf660044469c3c90c7ed9010"
+metafile = true
+
+[[files]]
 file = "mods/open-parties-and-claims.pw.toml"
 hash = "fe9b0c6b3f6c8f17989aa34724eb970e2df6129e38bb81788e01e0c9bbe22d2c"
 metafile = true
@@ -73,6 +88,11 @@ metafile = true
 [[files]]
 file = "mods/sodium.pw.toml"
 hash = "f73a48751e13380b87296e5b9627c9f6669efda386bd646fd5c499b344570f46"
+metafile = true
+
+[[files]]
+file = "mods/text-placeholder-api.pw.toml"
+hash = "605e24df28c2facc0e22397656ff507548b86badc0a8fbc278c72f6ccd3da242"
 metafile = true
 
 [[files]]

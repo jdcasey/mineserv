@@ -3,11 +3,11 @@ filename = "Cobblemon-fabric-1.6.1+1.21.1.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "44657312c2d9d43f5db24ec779b5044b7453a924"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/MdwFAVRL/versions/v77SHSXW/Cobblemon-fabric-1.6.1%2B1.21.1.jar"
+hash-format = "sha512"
+hash = "b7082befee07efd3e0c5857807f739082df5994ec0e7fe3217ce6cdaec7d2ca47ed51bd129096fd4eca8cbcf7de415d14602868a3357980ff88e55b3148dc7f4"
 
 [update]
-[update.curseforge]
-file-id = 6125079
-project-id = 687131
+[update.modrinth]
+mod-id = "MdwFAVRL"
+version = "v77SHSXW"
