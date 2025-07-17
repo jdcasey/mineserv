@@ -31,6 +31,11 @@ hash = "516f919c449af1af67374a500c385e4cb9ec26450edd1de4b85dd97895958bf5"
 metafile = true
 
 [[files]]
+file = "mods/cobblemon-ride-on.pw.toml"
+hash = "83b653139fd115cebf5017264a5b11b18f1f9d2d3685c08bea7aa6bbc6554f7c"
+metafile = true
+
+[[files]]
 file = "mods/cobblemon.pw.toml"
 hash = "18f45db393d99493c00150c2d4a74d927fc1eccb575629ef1a1fa72ef950b7ff"
 metafile = true
